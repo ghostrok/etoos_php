@@ -1,0 +1,129 @@
+
+===================================================================================================================
+
+<fckeditor 적용 node 설정>
+http://localhost:99/admin/user/permissions#module-ckeditor
+
+<입력field 퍼미션 설정 - hide/display>
+http://localhost:99/admin/user/permissions
+
+<리스트페이지 만들기>
+http://localhost:99/admin/build/views
+
+<taxonomy 등록> - 분류체계등록(입력폼값 또는 셀렉트값, 체크박스값)
+http://localhost:99/admin/content/taxonomy
+
+<동시로그인 가능갯수 처리>
+http://localhost:99/admin/user/session_limit
+
+<노드의 option 추가>
+uc_attribute : option의 그룹명
+uc_attribute_options 테이블에 직접추가, 메뉴를 찾지 못해서 편법으로 함! <- 아래의 메뉴에서 등록가능 찾았음
+
+http://localhost:99/admin/store/attributes
+ 
+ 
+<노드의 카테고리와 매팅되는 명칭>
+term_data 테이블에 명명되어있다.
+taxonomy_get_term(아이디);
+ 
+
+ 
+=================================================================================================================== 
+
+[Durpal] 관리자
+http://localhost:99
+ID : noreply@etoosindia.com
+PW : reply14mar@etoos#@!
+
+[CMS] 관리자페이지 - Durpal 코딩
+http://localhost:99/#all
+ID : jmhong@etoos.com
+PW : jmhong@etoos.com
+
+[CRM] 고객관리 - PHP 날코딩
+http://localhost:99/crm/admin/login.php
+ID : jmhong@etoos.com
+PW : jmhong@etoos.com
+
+
+
+
+
+
+===================================================================================================================
+
+
+1) taxonomy 모듈올리기 
+ - /module/taxonomy/taxonomy.module
+ - /include/common.inc 에 req()함수 추가 
+ 
+ 
+ ===================================================================================================================
+ 
+ 2) cms 구성 
+  
+  2-1) DB구성 
+  - book의 contents_type 구성(각각의 칼럼의 정의)
+  - book의 permission 구성(book contents_type의 퍼미션 조정)
+  - book의 optioin 구성(가격, 옵션)
+  - product의 contents_type에 book 추가
+   : 등록된 book을 선택기능
+  
+  - 노드추가 및 검색페이지 구성
+    : /admin/books
+	: http://localhost:99/admin/build/views/list    
+	: http://localhost:99/admin/build/views/edit/books_listing    
+  - 노드추가 
+    : /admin/add/books
+  
+  
+  - book 노드와 관련된 왼쪽메뉴 수정
+  
+   
+  2-2) 파일업로드 
+
+  - /admin/courses
+  - /admin/add/courses
+  - /admin/books
+  - /admin/add/books
+
+	위와 관련된 파일들 업로드 
+	
+===================================================================================================================
+
+ 3) 사용자 화면
+  
+  - 이미지 업로드
+	sites/all/themes/etoos1/images/@book.gif
+	sites/all/themes/etoos1/images/btn_bookRollring_off.gif
+	sites/all/themes/etoos1/images/btn_bookRollring_on.gif
+
+  - 개발모듈업로드 
+    : sitels/all/thems/etoos1/inc/course.inc.php
+  
+  - 강좌리스트 업로드
+    : etoos1/node-year-long-courses.tpl.php , book 추가
+  
+  - 강좌상세 업로드 
+    : etoos1/node-product.tpl.php , book 추가, study material 영역추가 
+    
+===================================================================================================================
+
+ 
+ 4) crm 구성 
+  - crm 폴더 업로드(전체)
+		sites/all/themes/cms_user/inc/header.inc
+		sites/all/themes/cms_user/page-front.tpl.php
+		sites/all/themes/cms_user/page-node-add-books.tpl.php
+		sites/all/themes/cms_user/page-node-add-product.tpl.php
+		sites/all/themes/cms_user/page-node-books.tpl.php
+		sites/all/themes/cms_user/page.tpl.php
+  
+  
+===================================================================================================================
+
+
+
+  
+  
