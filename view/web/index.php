@@ -1,1 +1,4 @@
-<?php
+<?php	
+	die("EXIT");
+	exit;
+?>
