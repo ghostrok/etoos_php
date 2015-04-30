@@ -3,6 +3,6 @@ phpinfo ();
 
 echo "TEST WEBSITE";
 
-// 대문입니다. 
+// 대문입니다.
 
 ?>
